@@ -8,6 +8,7 @@ namespace BibliotecaScolastica
 {
     internal class Libro
     {
+
         public string Autore { get; set; }
         public string Titolo { get; set; }
         public string annoPubblicazione { get; set; }
@@ -44,6 +45,61 @@ namespace BibliotecaScolastica
             }
 
         }
+        public void AggiungiLibro()
+        {
+            Console.WriteLine("Inserisci l'autore del libro:");
+            string autore = Console.ReadLine();
+            Console.WriteLine("Inserisci il titolo del libro:");
+            string titolo = Console.ReadLine();
+            Console.WriteLine("Inserisci l'anno di pubblicazione del libro:");
+            string annoPubblicazione = Console.ReadLine();
+            Console.WriteLine("Inserisci l'editore del libro:");
+            string editore = Console.ReadLine();
+            Console.WriteLine("Inserisci il numero delle pagine del libro:");
+            int numeroPagine = int.Parse(Console.ReadLine());
+            List<Libro> biblioteca = new List<Libro>();
+            biblioteca.Add(new Libro(autore, titolo, annoPubblicazione, editore, numeroPagine));
+
+        }
+        public void CercaLibroPerTitolo(string titolo)
+        {
+            Console.WriteLine("Inserisci il titolo del libro da cercare:");
+            titolo = Console.ReadLine();
+            for (int i = 0; i < titolo.Length; i++)
+            {
+                if(titolo == Titolo)
+                {
+                    Console.WriteLine(this.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Libro non trovato");
+                }
+            }
+        }
+        public void CercaLibriPerAutore(string autore)
+        {
+            Console.WriteLine("Inserisci l'autore del libro da cercare:");
+            autore = Console.ReadLine();
+            for (int i = 0; i < autore.Length; i++)
+            {
+                if(autore == Autore)
+                {
+                    Console.WriteLine(this.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Libro non trovato");
+                }
+            }
+        }   
+
+        public void ContaLibri(List<Libro> biblioteca)
+        {
+            Console.WriteLine($"Numero totale di libri presenti in biblioteca: {biblioteca.Count}");
+        }
+
+
 
     }
 }
