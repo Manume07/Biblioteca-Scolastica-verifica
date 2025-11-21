@@ -40,7 +40,7 @@ namespace BibliotecaScolastica
                         biblioteca.CercaLibriPerAutore();
                         break;
                     case "4":
-                        biblioteca.VisualizzaNumeroLibri();
+                        biblioteca.ContaLibri();
                         break;
                     case "0":
                         exit = true;
