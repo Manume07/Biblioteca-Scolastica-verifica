@@ -21,7 +21,36 @@ namespace BibliotecaScolastica
             Console.WriteLine("2. Cerca un libro inserendo titolo");
             Console.WriteLine("3. Cerca i libri inserendo l'autore");
             Console.WriteLine("4. Visualizza il numero totale dei libri");
-            
+
+            BibliotecaScolastica biblioteca = new BibliotecaScolastica(Nome, Indirizzo, OrarioApertura, OrarioChiusura);
+            bool exit = false;
+            while (!exit)
+            {
+                Console.Write("Inserisci il numero della scelta (0 per uscire): ");
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        biblioteca.AggiungiLibro();
+                        break;
+                    case "2":
+                        biblioteca.CercaLibroPerTitolo();
+                        break;
+                    case "3":
+                        biblioteca.CercaLibriPerAutore();
+                        break;
+                    case "4":
+                        biblioteca.VisualizzaNumeroLibri();
+                        break;
+                    case "0":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Opzione non valida. Riprova.");
+                        break;
+                }
+            }
+            Console.WriteLine("Grazie per aver utilizzato la biblioteca!");
 
         }
     }
