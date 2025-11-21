@@ -23,5 +23,27 @@ namespace BibliotecaScolastica
             NumeroPagine = _numeroPagine;
 
         }
+        public override string ToString()
+        {
+            return $"Titolo: {Titolo}, Autore: {Autore}, Anno di Pubblicazione: {annoPubblicazione}, Editore: {Editore}, Numero di Pagine: {NumeroPagine}";
+        }
+
+        public string ReadingTime()
+        {
+            if(NumeroPagine<100)
+            {
+                return "Tempo di lettura pari a 1h";
+            }
+            else if(NumeroPagine >= 100 && NumeroPagine <=200)
+            {
+                return "Tempo di lettura pari a 2h";
+            }
+            else
+            {
+                return "Tempo di lettura pari a +2h";
+            }
+
+        }
+
     }
 }
